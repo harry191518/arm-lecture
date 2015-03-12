@@ -11,7 +11,7 @@
 fibonacci:
     @ ADD/MODIFY CODE BELOW
     @ PROLOG
-	push {r3, r4, r5, lr}
+    push {r3, r4, r5, lr}
 
     cmp r0, #1
     ble .E1
