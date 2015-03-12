@@ -20,21 +20,21 @@ fibonacci:
     subs r0, r0, #2
 
 .L1:
-    adds r3, r3, r4
+    add r3, r4
     cmp r0, #0
     itt eq
     moveq r0, r3
     popeq {r3, r4, pc}
-    subs r0, r0, #1
+    sub r0, #1
     bl .L2
 
 .L2:
-    adds r4, r3, r4
+    adds r4, r3
     cmp r0, #0
     itt eq
     moveq r0, r4
     popeq {r3, r4, pc}
-    subs r0, r0, #1
+    sub r0, #1
     bl .L1
 
 
