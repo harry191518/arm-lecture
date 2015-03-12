@@ -1,12 +1,12 @@
-	.syntax unified
-	.arch armv7-a
-	.text
-	.align 2
-	.thumb
-	.thumb_func
+    .syntax unified
+    .arch armv7-a
+    .text
+    .align 2
+    .thumb
+    .thumb_func
 
-	.global fibonacci
-	.type fibonacci, function
+    .global fibonacci
+    .type fibonacci, function
 
 fibonacci:
     @ ADD/MODIFY CODE BELOW
@@ -43,12 +43,12 @@ fibonacci:
 
     @ END CODE MODIFICATION
 .L3:
-	mov r0, #0			@ R0 = 0
-	pop {r3, r4, r5, pc}		@ EPILOG
+    mov r0, #0			@ R0 = 0
+    pop {r3, r4, r5, pc}		@ EPILOG
 
 .L4:
-	mov r0, #1  		@ R0 = 1
-	pop {r3, r4, r5, pc}		@ EPILOG
+    mov r0, #1  		@ R0 = 1
+    pop {r3, r4, r5, pc}		@ EPILOG
 
-	.size fibonacci, .-fibonacci
-	.end
+    .size fibonacci, .-fibonacci
+    .end
