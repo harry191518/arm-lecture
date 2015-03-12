@@ -39,7 +39,7 @@ fibonacci:
     @ R0 = R5 + R0 (update flags)
     adds r0, r0, r5
     
-	pop {r4, r5, pc}		@EPILOG
+    pop {r4, r5, pc}		@EPILOG
 
     @ END CODE MODIFICATION
 .L3:
