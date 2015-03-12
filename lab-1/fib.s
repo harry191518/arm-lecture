@@ -43,11 +43,9 @@ fibonacci:
 
     @ END CODE MODIFICATION
 .L3:
-    mov r0, #0			@ R0 = 0
     pop {r4, r5, pc}		@ EPILOG
 
 .L4:
-    mov r0, #1  		@ R0 = 1
     pop {r4, r5, pc}		@ EPILOG
 
     .size fibonacci, .-fibonacci
