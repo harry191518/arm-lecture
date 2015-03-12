@@ -11,7 +11,7 @@
 fibonacci:
     @ ADD/MODIFY CODE BELOW
     @ PROLOG
-    push {r3, r4, lr}
+    push {r3, r4, r5, lr}
 
     cmp r0, #1
     ble .E1
@@ -19,27 +19,20 @@ fibonacci:
     mov r4, #1
     subs r0, r0, #2
 
-.L1:
-    adds r3, r3, r4
+.L:
+    adds r5, r3, r4
     cmp r0, #0
     itt eq
     moveq r0, r3
-    popeq {r3, r4, pc}
+    popeq {r3, r4, r5, pc}
     subs r0, r0, #1
-    bl .L2
-
-.L2:
-    adds r4, r3, r4
-    cmp r0, #0
-    itt eq
-    moveq r0, r4
-    popeq {r3, r4, pc}
-    subs r0, r0, #1
-    bl .L1
+    mov r3, r4
+    mov r4, r5
+    bl .L
 
 
 .E1:
-    pop {r3, r4, pc}		@ EPILOG
+    pop {r3, r4, r5, pc}		@ EPILOG
 
 
     .size fibonacci, .-fibonacci
